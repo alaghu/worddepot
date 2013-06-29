@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Word:</b>
+  <%= @word.word %>
+</p>
+
+<p>
+  <b>Partofspeech:</b>
+  <%= @word.partofspeech %>
+</p>
+
+<p>
+  <b>Sentence:</b>
+  <%= @word.sentence %>
+</p>
+
+<p>
+  <b>Meaning:</b>
+  <%= @word.meaning %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @word.points %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @word.color %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @word.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
