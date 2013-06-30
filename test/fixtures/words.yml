@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  word: MyString
-  partofspeech: MyString
-  sentence: MyText
-  meaning: MyText
+familiarity:
+  word: Familiarity
+  partofspeech: Noun
+  sentence: Familiarity breed content.
+  meaning: Considerable acquaintance with or knowledge
   points: 
-  color: MyString
+  color: White
   price: 9.99
 
 two:
