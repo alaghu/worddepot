@@ -1,0 +1,18 @@
+<% if notice %>
+    <p id="notice"> <%= notice %>
+<% end %>
+
+
+<h1>Your Word Catalog</h1>
+
+<!--Looping through all the reocrds from words instance variable-->
+<% @words.each do |wordLoop| %>
+    <div class="entry">
+      <h3><%= wordLoop.word %></h3>
+      <%= sanitize wordLoop.meaning %>
+      <div class="price_line">
+        <span class="price"><%= number_to_currency wordLoop.price %></span>
+      </div>
+    </div>
+
+<% end %>
