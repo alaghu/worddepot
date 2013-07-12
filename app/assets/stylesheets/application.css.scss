@@ -16,13 +16,13 @@
 @import "fonts.css.scss";
 @import "colors.css.scss";
 
-//Todo : To modify menu bar with the left circle and right square.
-
 body {
   margin: 0px;
 }
 
 //The clear fix technique for the topMenu as the parent
+// Refer to http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning
+//todo : replace with mixin
 #topMenu:before, #topMenu:after {
   display: table;
 
@@ -38,22 +38,31 @@ body {
   *zoom: 1;
 }
 
+//----- End of Clear fix for topMenu
+
+//This is the top Menu. Contains several sections within it.
+//Nameley, Circle for a dropdown menu in the left
+// A centered message bar in the center
+// A square which will be a search bar to the right
+
 #topMenu {
   @include border-bottom-radius(7px);
-  position: static;
 
+  @include linear-gradient($blue, 40%);
   width: 100%;
   min-width: 800px;
   margin: auto;
   padding: 0px;
 
-  color: #000000;
-  border-width: 0px 1px 2px 1px;
+  border-width: 0px 1px 1px 1px;
   border-style: solid;
-  border-color: #000000;
-  background-color: #fff9ff;
+  border-color: $black;
 
   font-family: champagne_limousines_regular;
+
+  //Setting the position static so that topMenu is the first of the blocks
+  //refer to http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning
+  position: static;
 
   //Providing a container within menu to house the circle
   #circleContainer {
@@ -64,13 +73,12 @@ body {
     height: 25px;
 
     border-bottom-left-radius: inherit;
-    background-color: $green;
 
     //The circle will be a menu button.
     .circle {
-
       //important - If we do not provide width value, the circle does not auto align horizontally
       width: 0px;
+      margin-top: 3px;
       margin-right: auto;
       margin-left: auto;
 
@@ -86,12 +94,17 @@ body {
   #messageBar {
     float: left;
 
-    margin-left: 50%;
-    //margin-right: 50%;
+    color: $white;
 
-    background-color: $red;
+    font-size: 22px;
+
+    //This is the only way I found that cneters the message bar
+    //todo : Need to find how to fill this div (center it)
+    margin-left: 50%;
   }
 
+  //Initially thought will be a child within this container. Leaving it as is
+  //for now
   #squareContainer {
     float: right;
 
@@ -101,24 +114,11 @@ body {
     border-bottom-right-radius: inherit;
     background-color: $green;
 
-    .square {
-      width: 0px;
-      margin-right: auto;
-      margin-left: auto;
-
-
-      border-width: 10px;
-      border-style: solid;
-      border-color: $red;
-      border-radius: 10px;
-
-    }
-
   }
 
-  @include linear-gradient($blue, 40%);
-
 }
+
+//----- End of top Menu
 
 #notice {
   margin-bottom: 2em;
