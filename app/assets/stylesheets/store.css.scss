@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .store {
-  h1{
+  h1 {
     margin: 0;
     padding-bottom: 0.5em;
 
@@ -14,9 +13,9 @@
     font: 150% sans-serif;
   }
 
-/* An entry in the store catalog*/
+  /* An entry in the store catalog*/
   .entry {
-   overflow: auto;
+    overflow: auto;
 
     min-height: 100px;
     margin-top: 1em;
@@ -36,9 +35,14 @@
   }
 
   p, div.price_line {
-    margin-top:  0.5em;
+    margin-top: 0.5em;
     margin-bottom: 0.8em;
     margin-left: 100px;
+
+    form, div {
+      display: inline;
+    }
+
   }
 
   .price {
@@ -48,6 +52,5 @@
 
     font-weight: bold;
   }
-
 
 }

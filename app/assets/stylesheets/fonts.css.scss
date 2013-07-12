@@ -1,0 +1,29 @@
+//This scss file is to define all the font definitions
+//These scss utilizes the bourbon gem
+//Please refer to http://bourbon.io/docs/
+
+//Default fonts
+//Uses http://bourbon.io/docs/#font-family
+
+$font-family: $monospace;
+$font-family: $helvetica;
+$font-family: $georgia;
+$font-family: $lucida-grande;
+$font-family: $monospace;
+$font-family: $verdana;
+
+
+//Custom fonts
+//uses mixin http://bourbon.io/docs/#font-face
+//to output @font-face css selector
+
+//Champagne Limousines Font
+@include font-face(anonymous-webfont, $file-path: 'anonymous-webfont', $weight: normal, $style: true, $asset-pipeline: true);
+
+@include font-face(champagne_limousines_regular, $file-path: 'champagne_limousines_regular-webfont', $weight: normal, $style: true, $asset-pipeline: true);
+
+@include font-face(champagne_limousines_italic, $file-path: 'champagne_limousines_italic-webfont', $weight: normal, $style: true, $asset-pipeline: true);
+
+@include font-face(champagne_limousines_bold_italic, $file-path: 'champagne_limousines_bold_italic-webfont', $weight: normal, $style: true, $asset-pipeline: true);
+
+@include font-face(champagn_limousines_bold, $file-path: 'champagne_limousines_bold-webfont', $weight: normal, $style: true, $asset-pipeline: true);

@@ -9,70 +9,162 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+
  */
 
+@import "bourbon";
+@import "fonts.css.scss";
+@import "colors.css.scss";
 
-#banner {
-  padding: 10px;
+//Todo : To modify menu bar with the left circle and right square.
 
-  text-align: center;
-
-  color: #282;
-  border-bottom: 2px solid;
-  background: #9c9;
-
-  font: small-caps 40px/40px "Times New Roman", serif;
-
-  img {
-    float: left;
-  }
-
+body {
+  margin: 0px;
 }
-  #notice {
-    margin-bottom: 2em;
-    padding: 1em;
 
-    color: #000 !important;
-    border: 2px solid #ff0000;
-    background-color: #f0f0f0;
+//The clear fix technique for the topMenu as the parent
+#topMenu:before, #topMenu:after {
+  display: table;
 
-    font: bold smaller sans-serif;
-  }
+  content: "";
+}
 
+#topMenu:after {
+  clear: both;
+}
 
-  #columns {
-    background: #141;
+#topMenu {
 
-    #main {
-      margin-left: 17em;
-      padding: 1em;
+  *zoom: 1;
+}
 
-      background: #ffffff;
+#topMenu {
+  @include border-bottom-radius(7px);
+  position: static;
+
+  width: 100%;
+  min-width: 800px;
+  margin: auto;
+  padding: 0px;
+
+  color: #000000;
+  border-width: 0px 1px 2px 1px;
+  border-style: solid;
+  border-color: #000000;
+  background-color: #fff9ff;
+
+  font-family: champagne_limousines_regular;
+
+  //Providing a container within menu to house the circle
+  #circleContainer {
+    float: left;
+    overflow: auto;
+
+    width: 35px;
+    height: 25px;
+
+    border-bottom-left-radius: inherit;
+    background-color: $green;
+
+    //The circle will be a menu button.
+    .circle {
+
+      //important - If we do not provide width value, the circle does not auto align horizontally
+      width: 0px;
+      margin-right: auto;
+      margin-left: auto;
+
+      border-width: 10px;
+      border-style: solid;
+      border-color: $red;
+      border-radius: 10px;
 
     }
 
-    #side {
-      float:left;
+  }
 
-      width: 13em;
-      padding: 1em 2em;
+  #messageBar {
+    float: left;
 
-      background: #141;
+    margin-left: 50%;
+    //margin-right: 50%;
 
-      ul {
-        padding: 0;
+    background-color: $red;
+  }
 
-        li {
-          list-style: none;
+  #squareContainer {
+    float: right;
 
-          a {
-            color: #bfb;
+    width: 35px;
+    height: 25px;
 
-            font-size: small;
-          }
+    border-bottom-right-radius: inherit;
+    background-color: $green;
+
+    .square {
+      width: 0px;
+      margin-right: auto;
+      margin-left: auto;
+
+
+      border-width: 10px;
+      border-style: solid;
+      border-color: $red;
+      border-radius: 10px;
+
+    }
+
+  }
+
+  @include linear-gradient($blue, 40%);
+
+}
+
+#notice {
+  margin-bottom: 2em;
+  padding: 1em;
+
+  color: #000 !important;
+  border: 2px solid #ff0000;
+  background-color: #f0f0f0;
+
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  background: #268018;
+
+  #main {
+    margin-left: 17em;
+    padding: 5px;
+
+    background: #ffffff;
+
+  }
+
+  #side {
+    float: left;
+
+    height: inherit;
+
+    background: #141;
+
+    //width: 50px;
+    //padding: 1em 2em;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #bfb;
+
+          font-size: small;
         }
       }
     }
   }
+}
 

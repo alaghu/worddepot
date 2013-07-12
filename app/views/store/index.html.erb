@@ -12,6 +12,7 @@
       <%= sanitize wordLoop.meaning %>
       <div class="price_line">
         <span class="price"><%= number_to_currency wordLoop.price %></span>
+        <%=  button_to 'Add to Cart' , line_items_path(word_id: Word) %>
       </div>
     </div>
 

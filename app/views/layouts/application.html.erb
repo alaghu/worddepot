@@ -8,9 +8,14 @@
 </head>
 <body class="<%= controller.controller_name %>">
 
-<div id="banner">
-  <%= image_tag "logo.png" %>
-  <%= @page_title || "Word Depot" %>
+<div id="topMenu">
+  <div id="circleContainer">
+    <div class="circle"></div>
+  </div>
+  <div id="messageBar"> <%= @page_title || "Word Depot" %></div>
+  <div id="squareContainer">
+    <div class="square"></div>
+  </div>
 </div>
 
 <div id="columns">
