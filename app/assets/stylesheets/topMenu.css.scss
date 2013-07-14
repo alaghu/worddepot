@@ -1,0 +1,143 @@
+//This SCSS file has all the css properties for the topMenu div. It includes all the children classes.
+//The first section is the clear fix
+//Followed by other children
+
+
+//The clear fix technique for the topMenu as the parent
+//Refer to http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning
+//This is a mixin from neat library for clear fix technique
+$max-width:100%;
+#topMenu {
+  //http://neat.bourbon.io/docs/#outer-container
+  @include outer-container;
+}
+
+
+//This is the top Menu. Contains several sections within it.
+//Nameley, Circle for a dropdown menu in the left
+// A centered message bar in the center
+// A square which will be a search bar to the right
+
+#topMenu {
+  @include border-bottom-radius(7px);
+
+  @include linear-gradient($blue, 40%);
+  width: 100% !important;
+  min-width: 800px !important;
+  margin: auto;
+  padding: 0px;
+
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: $black;
+
+  font-family: champagne_limousines_regular;
+
+  //Setting the position static so that topMenu is the first of the blocks
+  //refer to http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning
+  position: static;
+
+  //Providing a container within menu to house the circle
+  #circleContainer {
+    float: left;
+    overflow: auto;
+
+    width: 35px;
+    height: 25px;
+
+    border-bottom-left-radius: inherit;
+
+    //The circle will be a menu button.
+    .circle {
+      //important - If we do not provide width value, the circle does not auto align horizontally
+      width: 0px;
+      margin-top: 3px;
+      margin-right: auto;
+      margin-left: auto;
+
+      border-width: 10px;
+      border-style: solid;
+      border-color: $red;
+      border-radius: 10px;
+
+    }
+
+  }
+
+  #messageBar {
+    float: left;
+
+    color: $white;
+
+    font-size: 22px;
+
+    //This is the only way I found that cneters the message bar
+    //todo : Need to find how to fill this div (center it)
+    margin-left: 50%;
+  }
+
+  //Initially thought will be a child within this container. Leaving it as is
+  //for now
+  #squareContainer {
+    float: right;
+
+    width: 35px;
+    height: 25px;
+
+    border-bottom-right-radius: inherit;
+    background-color: $green;
+
+  }
+
+}
+
+//----- End of top Menu
+
+#notice {
+  margin-bottom: 2em;
+  padding: 1em;
+
+  color: #000 !important;
+  border: 2px solid #ff0000;
+  background-color: #f0f0f0;
+
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  background: #268018;
+
+  #main {
+    margin-left: 17em;
+    padding: 5px;
+
+    background: #ffffff;
+
+  }
+
+  #side {
+    float: left;
+
+    height: inherit;
+
+    background: #141;
+
+    //width: 50px;
+    //padding: 1em 2em;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #bfb;
+
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+

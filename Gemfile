@@ -37,5 +37,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-# needed for css vendor prefix
+#Needed for css vendor prefix. Refer to  http://bourbon.io/
 gem 'bourbon'
+
+#A grid framework. Refer to http://neat.bourbon.io/
+gem "neat", "~> 1.3.0"
