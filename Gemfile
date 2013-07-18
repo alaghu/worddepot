@@ -42,3 +42,7 @@ gem 'bourbon'
 
 #A grid framework. Refer to http://neat.bourbon.io/
 gem "neat", "~> 1.3.0"
+
+
+#To reset the css defaults across different browser http://necolas.github.io/normalize.css/
+gem 'normalize-rails'

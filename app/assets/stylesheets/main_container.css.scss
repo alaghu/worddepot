@@ -1,0 +1,17 @@
+//This section sets the main container and the columns. Currently, it utilizes the neat framework's span. todo- going forward want to make them fixed width.
+
+//Columns settings of main container, which consists of left menu and main.
+#mainContainer {
+
+  @include outer-container;
+
+  #leftMenu {
+    @include span-columns(2);
+  }
+
+  #main {
+    @include span-columns(10);
+  }
+
+}
+

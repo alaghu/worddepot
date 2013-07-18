@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require normalize-rails
 
  */
 
@@ -21,19 +22,17 @@
 
 //#A grid framework. Refer to http://neat.bourbon.io/
 @import "neat";
+//todo - create a separate variables file for neat variables
 
-//Including all the fonts
+//All the fonts go here
 @import "fonts.css.scss";
 
 //All color variables are defined here
 @import "colors.css.scss";
 
+//the topMenu bar
+@import "top_menu.css.scss";
 
-//Including the topMenu
-@import "topMenu.css.scss";
+//the main container (below the menu bar)
+@import "main_container.css.scss";
 
-//Few reset properties will be listed below
-
-body {
-  margin: 0px;
-}
